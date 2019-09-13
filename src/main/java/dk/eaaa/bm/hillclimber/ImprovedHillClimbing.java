@@ -29,8 +29,9 @@ public class ImprovedHillClimbing {
 		
 		for(int i = 0; i < iterations; i++) {
 			
-			// Select a random neighbor.
+			// Select a random neighbor. SHOULD GET FROM UNIVERSE
 			ArrayList<Double> alternativeSolution = getRandomPoint(problem);
+			
 		
 			// Compare the current solution with the alternative solution.
 			double valCurrentSolution = problem.eval(currentSolution);
