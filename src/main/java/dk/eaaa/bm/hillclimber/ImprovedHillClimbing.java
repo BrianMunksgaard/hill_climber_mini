@@ -53,7 +53,7 @@ public class ImprovedHillClimbing {
 	 */
 	private ArrayList<Double> getRandomPoint(Problem problem) {
 		
-		ArrayList<Double> initialPoint = new ArrayList<>(problem.getDimensions());
+		ArrayList<Double> randomPoint = new ArrayList<>(problem.getDimensions());
 		
 		// Generate random value for each dimension in the point.
 		for(int dim = 0; dim < problem.getDimensions(); dim++) {
@@ -64,10 +64,10 @@ public class ImprovedHillClimbing {
 			
 			// Generate random value between lower and upper bounds.
 			Double randomDimValue = minValCurrentDim + Math.random() * (maxValCurrentDim - minValCurrentDim);
-			initialPoint.add(randomDimValue);
+			randomPoint.add(randomDimValue);
 		}
 		
-		return initialPoint;
+		return randomPoint;
 	}
 
 	public static void main(String[] args) {
