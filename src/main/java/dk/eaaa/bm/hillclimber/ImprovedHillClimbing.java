@@ -7,7 +7,7 @@ public class ImprovedHillClimbing {
 
 	private org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(this.getClass().getName());
 	
-	private final List<Double> universe;
+//	private final List<Double> universe;
 	
 	private final Problem problem;
 
@@ -18,7 +18,7 @@ public class ImprovedHillClimbing {
 	 * @param problem	The problem defining the constraints and evaluation function.
 	 */
 	public ImprovedHillClimbing(final List<Double> universe, final Problem problem) {
-		this.universe = universe;
+//		this.universe = universe;
 		this.problem = problem;
 	}
 
@@ -32,7 +32,23 @@ public class ImprovedHillClimbing {
 			// Select a random neighbor. SHOULD GET FROM UNIVERSE
 			ArrayList<Double> alternativeSolution = getRandomPoint(problem);
 			
-		
+//			boolean shouldContinue;
+//			do {
+//				// Select a random neighbour
+//				double newSolution = this.universe.get(this.getRandomIndex());
+//				// If a new solution's value is greater than current, best solution
+//				if (bestSolution < newSolution) {
+//					// Change the best solution
+//					bestSolution = newSolution;
+//					// And continue searching
+//					shouldContinue = true;
+//				} else {
+//					// Otherwise stop
+//					shouldContinue = false;
+//				}
+//			} while (shouldContinue);
+//
+			
 			// Compare the current solution with the alternative solution.
 			double valCurrentSolution = problem.eval(currentSolution);
 			double valAlternativeSolution = problem.eval(alternativeSolution);
@@ -43,6 +59,7 @@ public class ImprovedHillClimbing {
 				currentSolution = alternativeSolution;
 			} 
 
+			
 		}
 		//return bestSolution;
 		return null;
