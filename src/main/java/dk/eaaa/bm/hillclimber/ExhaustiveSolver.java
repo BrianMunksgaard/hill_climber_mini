@@ -2,12 +2,22 @@ package dk.eaaa.bm.hillclimber;
 
 import java.util.ArrayList;
 
+/**
+ * Exhaustive solver used to solve problems of type Problem.
+ * Currently uses steps of 0.01 when searching for solutions.
+ */
 public class ExhaustiveSolver {
 
 	private org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(this.getClass().getName());
 	
 	private int solutionsChecked;
 	
+	/**
+	 * Solves problem p exhaustively.
+	 * Logs the best solution found along with the number of solution checks performed.
+	 * 
+	 * @param p The problem to solve.
+	 */
 	public void solve(Problem p) {
 		
 		solutionsChecked = 0;
@@ -33,13 +43,13 @@ public class ExhaustiveSolver {
 		for( double x = minX; x <= maxX; x+= 0.01) {
 
 			for( double y = minY; y <= maxY; y+= 0.01) {
-				double sol = getSol(p, x, y);
+				double sol = evaluate(p, x, y);
 				if (sol > bestSol) {
 					bestSol = sol;
 					bestPoint.set(0, x);
 					bestPoint.set(1, y);
 				}
-				sol = getSol(p, y, x);
+				sol = evaluate(p, y, x);
 				if (sol > bestSol) {
 					bestSol = sol;
 					bestPoint.set(0, y);
@@ -53,14 +63,21 @@ public class ExhaustiveSolver {
 		log.info(msg);
 	}
 	
-	private double getSol(Problem p, double x, double y) {
+	/*
+	 * The Problem class uses an ArrayList to represent coordinates. With
+	 * this utility method the evaluation function for the problem can
+	 * be called with x and y coordinates.
+	 * 
+	 * NOTE: Assumes only two dimensions in the problem.
+	 */
+	private double evaluate(Problem p, double x, double y) {
 		ArrayList<Double> currentPoint = new ArrayList<>();
 		currentPoint.add(x);
 		currentPoint.add(y);
 		double sol = p.eval(currentPoint); 
 		solutionsChecked++;
 		if(log.isTraceEnabled()) {
-			String msg = String.format("Solution %d for %.2f, %.2f = %f", ++solutionsChecked, x, y, sol);
+			String msg = String.format("Solution %d for %.2f, %.2f = %f", solutionsChecked, x, y, sol);
 			log.trace(msg);
 		}
 		return sol;

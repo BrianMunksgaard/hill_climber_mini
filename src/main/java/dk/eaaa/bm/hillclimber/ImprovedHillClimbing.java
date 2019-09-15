@@ -1,102 +1,98 @@
 package dk.eaaa.bm.hillclimber;
 
 import java.util.ArrayList;
-import java.util.List;
+import org.javatuples.Pair;
 
 public class ImprovedHillClimbing {
 
 	private org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(this.getClass().getName());
 	
-//	private final List<Double> universe;
-	
 	private final Problem problem;
+	private final NeighborFactory neighborFactory;
+	
+	private int solutionsChecked;
 
 	/**
 	 * Initialize hill climbing solver.
 	 * 
-	 * @param universe	The search space.
-	 * @param problem	The problem defining the constraints and evaluation function.
+	 * @param problem	The problem defining the search space, constraints and evaluation function.
 	 */
-	public ImprovedHillClimbing(final List<Double> universe, final Problem problem) {
-//		this.universe = universe;
+	public ImprovedHillClimbing(final Problem problem, final NeighborFactory neighborFactory) {
 		this.problem = problem;
+		this.neighborFactory = neighborFactory;
 	}
 
 	public ArrayList<Double> findOptima(int iterations) {
 		
+		solutionsChecked = 0;
+		
 		// Select a random value as a starting point.
-		ArrayList<Double> currentSolution = getRandomPoint(problem);
+		ArrayList<Double> bestPoint = ProblemUtil.getRandomPoint(problem);
+		Double bestSol = problem.eval(bestPoint);
 		
 		for(int i = 0; i < iterations; i++) {
 			
-			// Select a random neighbor. SHOULD GET FROM UNIVERSE
-			ArrayList<Double> alternativeSolution = getRandomPoint(problem);
+			// Select a random neighbor.
+			ArrayList<Double> currentPoint = ProblemUtil.getRandomPoint(problem);
+			double currentSol = problem.eval(currentPoint);
 			
-//			boolean shouldContinue;
-//			do {
-//				// Select a random neighbour
-//				double newSolution = this.universe.get(this.getRandomIndex());
-//				// If a new solution's value is greater than current, best solution
-//				if (bestSolution < newSolution) {
-//					// Change the best solution
-//					bestSolution = newSolution;
-//					// And continue searching
-//					shouldContinue = true;
-//				} else {
-//					// Otherwise stop
-//					shouldContinue = false;
-//				}
-//			} while (shouldContinue);
-//
+			boolean shouldContinue;
+			do {
+				ArrayList<ArrayList<Double>> neighbors = neighborFactory.getNeighbors(problem, currentPoint);
+				Pair<Double, ArrayList<Double>> bestNeighbor = getBestNeighbor(neighbors);
+				
+				double neighborSol = bestNeighbor.getValue0();
+				ArrayList<Double> neighborPoint = bestNeighbor.getValue1();
+				
+				if (currentSol < neighborSol) {
+					currentSol = neighborSol;
+					currentPoint.set(0, neighborPoint.get(0));
+					currentPoint.set(1, neighborPoint.get(1));
+					shouldContinue = true;
+				} else {
+					shouldContinue = false;
+				}
+			} while (shouldContinue);
 			
-			// Compare the current solution with the alternative solution.
-			double valCurrentSolution = problem.eval(currentSolution);
-			double valAlternativeSolution = problem.eval(alternativeSolution);
-			log.info("Comparing current solution of {} to alternative (neighbor) solution of {}.", valCurrentSolution, valAlternativeSolution);
 			
-			if (valCurrentSolution < valAlternativeSolution) {
-				log.info("Chosing alternative solution.");
-				currentSolution = alternativeSolution;
-			} 
-
-			
-		}
-		//return bestSolution;
-		return null;
-	}
-	
-	/*
-	 * Generates a random starting point for the specified problem.
-	 */
-	private ArrayList<Double> getRandomPoint(Problem problem) {
-		
-		ArrayList<Double> randomPoint = new ArrayList<>(problem.getDimensions());
-		
-		// Generate random value for each dimension in the point.
-		for(int dim = 0; dim < problem.getDimensions(); dim++) {
-			
-			// Get lower and upper bounds for the current dimension.
-			Double minValCurrentDim = problem.getMinValues().get(dim);
-			Double maxValCurrentDim = problem.getMaxValues().get(dim);
-			
-			// Generate random value between lower and upper bounds.
-			Double randomDimValue = minValCurrentDim + Math.random() * (maxValCurrentDim - minValCurrentDim);
-			randomPoint.add(randomDimValue);
+			if(bestSol < currentSol) {
+				bestSol = currentSol;
+				bestPoint.set(0, currentPoint.get(0));
+				bestPoint.set(1, currentPoint.get(1));
+			}
 		}
 		
-		return randomPoint;
+		String msg = String.format("Best solution is: %.2f, %.2f = %.2f", bestPoint.get(0), bestPoint.get(1), bestSol);
+		log.info("Number of solutions checked: {}.", solutionsChecked);
+		log.info(msg);
+		return bestPoint;
 	}
 
-	public static void main(String[] args) {
-
-//		ArrayList<Double> list = new ArrayList<>();
-//
-//		// TODO add to list
-//
-//		ImprovedHillClimbing test = new ImprovedHillClimbing(list);
-//		System.out.println(test.findOptima());
+	private Pair<Double, ArrayList<Double>> getBestNeighbor(ArrayList<ArrayList<Double>> neighbors) {
+		double neighborSol = Double.MIN_VALUE;
+		ArrayList<Double> neighborPoint = new ArrayList<>(problem.getDimensions());
+		neighborPoint.add(Double.MIN_VALUE);
+		neighborPoint.add(Double.MIN_VALUE);
+		
+		for(ArrayList<Double> point : neighbors) {
+			double nSol = evaluate(point);
+			if(neighborSol < nSol) {
+				neighborSol = nSol;
+				neighborPoint.set(0, point.get(0));
+				neighborPoint.set(1, point.get(1));
+			}
+		}
+		
+		return Pair.with(neighborSol, neighborPoint);
 	}
 	
-	
-
+	private double evaluate(ArrayList<Double> point) {
+		double e = problem.eval(point);
+		solutionsChecked++;
+		if(log.isTraceEnabled()) {
+			String msg = String.format("Solution %d for %.2f, %.2f = %f", solutionsChecked, point.get(0), point.get(1), e);
+			log.trace(msg);
+		}
+		return e;
+	}
 }

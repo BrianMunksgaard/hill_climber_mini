@@ -2,8 +2,10 @@ package dk.eaaa.bm.hillclimber;
 
 import java.util.ArrayList;
 
-public class ProbemUtil {
+public class ProblemUtil {
 
+//	private static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ProblemUtil.class);
+	
 	/**
 	 * Generates a random starting point for the specified problem.
 	 */
@@ -26,4 +28,22 @@ public class ProbemUtil {
 		return initialPoint;
 	}
 
+//	/**
+//	 * The Problem class uses an ArrayList to represent coordinates. With
+//	 * this utility method the evaluation function for the problem can
+//	 * be called with x and y coordinates.
+//	 * 
+//	 * NOTE: Assumes only two dimensions in the problem.
+//	 */
+//	public static double getSol(Problem p, double x, double y) {
+//		ArrayList<Double> currentPoint = new ArrayList<>();
+//		currentPoint.add(x);
+//		currentPoint.add(y);
+//		double sol = p.eval(currentPoint); 
+//		if(log.isTraceEnabled()) {
+//			String msg = String.format("Solution %d for %.2f, %.2f = %f", solutionsChecked, x, y, sol);
+//			log.trace(msg);
+//		}
+//		return sol;
+//	}
 }
