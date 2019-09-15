@@ -14,7 +14,6 @@ public class ExhaustiveSolverTests {
 	@Test
 	public void testExhaustiveSolutionForP1() {
 		TimerUtil tu = TimerUtil.start(log, Level.INFO, "P1 exhaustive test");
-//		log.info("Starting exhaustive search for P1 problem.");
 		Problem p = new P1();
 		ExhaustiveSolver solver = new ExhaustiveSolver();
 		solver.solve(p);
@@ -25,7 +24,6 @@ public class ExhaustiveSolverTests {
 	@Test
 	public void testExhaustiveSolutionForP2() {
 		TimerUtil tu = TimerUtil.start(log, Level.INFO, "P2 exhaustive test");
-//		log.info("Starting exhaustive search for P2 problem.");
 		Problem p = new P2();
 		ExhaustiveSolver solver = new ExhaustiveSolver();
 		solver.solve(p);
@@ -35,7 +33,6 @@ public class ExhaustiveSolverTests {
 	@Test
 	public void testExhaustiveSolutionForRevAckley() {
 		TimerUtil tu = TimerUtil.start(log, Level.INFO, "RevAckley exhaustive test");
-//		log.info("Starting exhaustive search for RevAckley problem.");
 		Problem p = new RevAckley();
 		ExhaustiveSolver solver = new ExhaustiveSolver();
 		solver.solve(p);
