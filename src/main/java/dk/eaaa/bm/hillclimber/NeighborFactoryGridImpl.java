@@ -2,8 +2,22 @@ package dk.eaaa.bm.hillclimber;
 
 import java.util.ArrayList;
 
-public class NeighborFactoryMaxtrixImpl implements NeighborFactory {
+/**
+ * Grid implementation of the neighbor factory. This implementation picks
+ * 8 neighbors from a grid around the current point as shown below:
+ * 
+ * N N N
+ * N C N
+ * N N N
+ * 
+ * Where C is the current point and each N is a neighbor stepSize
+ * away from C.
+ */
+public class NeighborFactoryGridImpl implements NeighborFactory {
 
+	/**
+	 * Picks 8 neighbors from a grid around the point. Each neighbor is stepSize steps from the point.
+	 */
 	public ArrayList<ArrayList<Double>> getNeighbors(Problem p, ArrayList<Double> point, double stepSize) {
 		
 		ArrayList<ArrayList<Double>> neighbors = new ArrayList<>();
@@ -23,6 +37,10 @@ public class NeighborFactoryMaxtrixImpl implements NeighborFactory {
 		return neighbors;
 	}
 	
+	/*
+	 * Computes a neighbor deltaX and deltaY steps away from the point x,y adhering to the constraints
+	 * imposed by the problem. 
+	 */
 	private ArrayList<Double> getNeighborPoint(Problem p, double x, double y, double deltaX, double deltaY) {
 		ArrayList<Double> point = new ArrayList<>(p.getDimensions());
 
