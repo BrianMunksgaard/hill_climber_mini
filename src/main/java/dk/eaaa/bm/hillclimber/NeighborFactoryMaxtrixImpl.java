@@ -4,23 +4,21 @@ import java.util.ArrayList;
 
 public class NeighborFactoryMaxtrixImpl implements NeighborFactory {
 
-	public ArrayList<ArrayList<Double>> getNeighbors(Problem p, ArrayList<Double> point) {
+	public ArrayList<ArrayList<Double>> getNeighbors(Problem p, ArrayList<Double> point, double stepSize) {
 		
 		ArrayList<ArrayList<Double>> neighbors = new ArrayList<>();
 		
-		double step = 0.01;
 		double x = point.get(0);
 		double y = point.get(1);
 				
-
-		neighbors.add(getNeighborPoint(p, x, y, step, 0));			// Right of current point.
-		neighbors.add(getNeighborPoint(p, x, y, step, step)); 		// Above and right of current point.
-		neighbors.add(getNeighborPoint(p, x, y, 0, step)); 			// Above current point.
-		neighbors.add(getNeighborPoint(p, x, y, -step, step));		// Above and left of current point.
-		neighbors.add(getNeighborPoint(p, x, y, -step, 0)); 		// Left of current point.
-		neighbors.add(getNeighborPoint(p, x, y, -step, -step)); 	// Below and left of current point.
-		neighbors.add(getNeighborPoint(p, x, y, 0, -step)); 		// Below current point.
-		neighbors.add(getNeighborPoint(p, x, y, step, -step)); 		// Below and right of current point.
+		neighbors.add(getNeighborPoint(p, x, y, stepSize, 0));			// Right of current point.
+		neighbors.add(getNeighborPoint(p, x, y, stepSize, stepSize)); 	// Above and right of current point.
+		neighbors.add(getNeighborPoint(p, x, y, 0, stepSize)); 			// Above current point.
+		neighbors.add(getNeighborPoint(p, x, y, -stepSize, stepSize));	// Above and left of current point.
+		neighbors.add(getNeighborPoint(p, x, y, -stepSize, 0)); 			// Left of current point.
+		neighbors.add(getNeighborPoint(p, x, y, -stepSize, -stepSize)); 	// Below and left of current point.
+		neighbors.add(getNeighborPoint(p, x, y, 0, -stepSize)); 			// Below current point.
+		neighbors.add(getNeighborPoint(p, x, y, stepSize, -stepSize)); 	// Below and right of current point.
 		
 		return neighbors;
 	}
@@ -36,25 +34,15 @@ public class NeighborFactoryMaxtrixImpl implements NeighborFactory {
 		double nx = x;
 		double ny = y;
 		
-		if(deltaX > 0) {
-			nx = x + deltaX;
-			if(nx > maxX) nx = maxX;
-		}
+		// Compute new coordinates.
+		if(deltaX != 0) 	nx = x + deltaX;
+		if(deltaY != 0) ny = y + deltaY;
 		
-		if(deltaX < 0) {
-			nx = x -deltaX;
-			if(nx < minX) nx = minX;
-		}
-		
-		if(deltaY > 0) {
-			ny = y + deltaY;
-			if(ny > maxY) ny = maxY;
-		}
-		
-		if(deltaY < 0) {
-			ny = y -deltaY;
-			if(ny < minY) ny = minY;
-		}
+		// Handle constraints.
+		if(nx > maxX) nx = maxX;
+		if(nx < minX) nx = minX;
+		if(ny > maxY) ny = maxY;
+		if(ny < minY) ny = minY;
 		
 		point.add(nx);
 		point.add(ny);

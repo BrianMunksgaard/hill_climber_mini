@@ -9,7 +9,7 @@
 		</encoder>
 	</appender>
 -
--   <logger name="dk.eaaa.bm" level="DEBUG" />
+-   <logger name="dk.eaaa.bm" level="TRACE" />
 -
 -   <root level="INFO">
 -       <appender-ref ref="STDOUT" />

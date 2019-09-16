@@ -1,6 +1,8 @@
 package dk.eaaa.bm.hillclimber;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.javatuples.Pair;
 
 public class ImprovedHillClimbing {
@@ -9,6 +11,7 @@ public class ImprovedHillClimbing {
 	
 	private final Problem problem;
 	private final NeighborFactory neighborFactory;
+	private final double stepSize;
 	
 	private int solutionsChecked;
 
@@ -17,9 +20,10 @@ public class ImprovedHillClimbing {
 	 * 
 	 * @param problem	The problem defining the search space, constraints and evaluation function.
 	 */
-	public ImprovedHillClimbing(final Problem problem, final NeighborFactory neighborFactory) {
+	public ImprovedHillClimbing(final Problem problem, final NeighborFactory neighborFactory, double stepSize) {
 		this.problem = problem;
 		this.neighborFactory = neighborFactory;
+		this.stepSize = stepSize;
 	}
 
 	public ArrayList<Double> findOptima(int iterations) {
@@ -30,6 +34,9 @@ public class ImprovedHillClimbing {
 		ArrayList<Double> bestPoint = ProblemUtil.getRandomPoint(problem);
 		Double bestSol = problem.eval(bestPoint);
 		
+//		ArrayList<Double> bestPoint = new ArrayList<>(Arrays.asList(Double.MIN_VALUE, Double.MIN_VALUE));
+//		Double bestSol = Double.MIN_VALUE;
+		
 		for(int i = 0; i < iterations; i++) {
 			
 			// Select a random neighbor.
@@ -38,7 +45,7 @@ public class ImprovedHillClimbing {
 			
 			boolean shouldContinue;
 			do {
-				ArrayList<ArrayList<Double>> neighbors = neighborFactory.getNeighbors(problem, currentPoint);
+				ArrayList<ArrayList<Double>> neighbors = neighborFactory.getNeighbors(problem, currentPoint, stepSize);
 				Pair<Double, ArrayList<Double>> bestNeighbor = getBestNeighbor(neighbors);
 				
 				double neighborSol = bestNeighbor.getValue0();
@@ -54,7 +61,6 @@ public class ImprovedHillClimbing {
 				}
 			} while (shouldContinue);
 			
-			
 			if(bestSol < currentSol) {
 				bestSol = currentSol;
 				bestPoint.set(0, currentPoint.get(0));
@@ -62,17 +68,24 @@ public class ImprovedHillClimbing {
 			}
 		}
 		
-		String msg = String.format("Best solution is: %.2f, %.2f = %.2f", bestPoint.get(0), bestPoint.get(1), bestSol);
+		String msg = String.format("Best solution is: %.4f, %.4f = %.4f", bestPoint.get(0), bestPoint.get(1), bestSol);
 		log.info("Number of solutions checked: {}.", solutionsChecked);
 		log.info(msg);
 		return bestPoint;
 	}
 
+	/*
+	 * Given a list of neighbors, return the neighbor with the best evaluation.
+	 */
 	private Pair<Double, ArrayList<Double>> getBestNeighbor(ArrayList<ArrayList<Double>> neighbors) {
-		double neighborSol = Double.MIN_VALUE;
+//		double neighborSol = Double.MIN_VALUE;
+//		ArrayList<Double> neighborPoint = new ArrayList<>(problem.getDimensions());
+//		neighborPoint.add(Double.MIN_VALUE);
+//		neighborPoint.add(Double.MIN_VALUE);
+		double neighborSol = -Double.MAX_VALUE;
 		ArrayList<Double> neighborPoint = new ArrayList<>(problem.getDimensions());
-		neighborPoint.add(Double.MIN_VALUE);
-		neighborPoint.add(Double.MIN_VALUE);
+		neighborPoint.add(-Double.MAX_VALUE);
+		neighborPoint.add(-Double.MAX_VALUE);
 		
 		for(ArrayList<Double> point : neighbors) {
 			double nSol = evaluate(point);
@@ -85,12 +98,18 @@ public class ImprovedHillClimbing {
 		
 		return Pair.with(neighborSol, neighborPoint);
 	}
-	
+
+
+	/*
+	 * Wrapper for the eval function in the problem class. Used
+	 * for counting the number of calls to the eval function and
+	 * log current state.
+	 */
 	private double evaluate(ArrayList<Double> point) {
 		double e = problem.eval(point);
 		solutionsChecked++;
 		if(log.isTraceEnabled()) {
-			String msg = String.format("Solution %d for %.2f, %.2f = %f", solutionsChecked, point.get(0), point.get(1), e);
+			String msg = String.format("Solution %d for %.4f, %.4f = %.4f", solutionsChecked, point.get(0), point.get(1), e);
 			log.trace(msg);
 		}
 		return e;
