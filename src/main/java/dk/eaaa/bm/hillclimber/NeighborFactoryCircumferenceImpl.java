@@ -25,7 +25,7 @@ public class NeighborFactoryCircumferenceImpl implements NeighborFactory {
 		double y = point.get(1);
 		
 		ArrayList<ArrayList<Double>> neighbors = new ArrayList<>(noOfNeighbors);
-		double radian = (2 * 22 / 7) / noOfNeighbors;
+		double radian = (2 * 22.0 / 7.0) / noOfNeighbors;
 
 		for (int i = 0; i < noOfNeighbors; i++) {
 			double t = (i + 1) * radian;

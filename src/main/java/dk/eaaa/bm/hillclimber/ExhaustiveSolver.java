@@ -37,9 +37,8 @@ public class ExhaustiveSolver {
 		
 		bestPoint.add(minX);
 		bestPoint.add(minY);
-		Double bestSol = Double.MIN_VALUE;
+		Double bestSol = -Double.MAX_VALUE;
 	
-		
 		for( double x = minX; x <= maxX; x+= 0.01) {
 
 			for( double y = minY; y <= maxY; y+= 0.01) {

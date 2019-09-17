@@ -1,185 +1,185 @@
-Started operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.01.
-Number of solutions checked: 9370. Found better neighbor 927 times. Found better solution 3 times.
-Best solution is: -0.0035, 0.0060 = 1.0000
-Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.01 - Time spent PT0.016S
-
-Started operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.01.
-Number of solutions checked: 494200. Found better neighbor 4842 times. Found better solution 5 times.
-Best solution is: 0.0016, 0.0402 = 0.9984
-Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.01 - Time spent PT0.103S
-
-Started operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.1.
-Number of solutions checked: 320. Found better neighbor 22 times. Found better solution 1 times.
-Best solution is: 0.2980, -0.1855 = 0.8841
-Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.1 - Time spent PT0S
-
-Started operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.1.
-Number of solutions checked: 66200. Found better neighbor 562 times. Found better solution 2 times.
-Best solution is: 0.0333, -0.1025 = 0.9885
-Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.1 - Time spent PT0.01S
-
-Started operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.01.
-Number of solutions checked: 17030. Found better neighbor 1693 times. Found better solution 5 times.
-Best solution is: 1.6981, 1.7471 = 1.9982
-Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.01 - Time spent PT0.009S
-
-Started operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.01.
-Number of solutions checked: 949200. Found better neighbor 9392 times. Found better solution 7 times.
-Best solution is: 1.6993, 1.6490 = 1.9985
-Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.01 - Time spent PT0.214S
-
-Started operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.1.
-Number of solutions checked: 810. Found better neighbor 71 times. Found better solution 2 times.
-Best solution is: 1.7338, 1.7713 = 1.9897
-Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.1 - Time spent PT0S
-
-Started operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.1.
-Number of solutions checked: 90700. Found better neighbor 807 times. Found better solution 3 times.
-Best solution is: 1.7358, 1.6959 = 2.0002
-Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.1 - Time spent PT0.02S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.001.
-Number of solutions checked: 12630. Found better neighbor 1253 times. Found better solution 4 times.
-Best solution is: -2.9258, 0.1824 = -7.5850
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.001 - Time spent PT0.009S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.001.
-Number of solutions checked: 1051200. Found better neighbor 10412 times. Found better solution 5 times.
-Best solution is: 0.2872, -0.1179 = -2.2892
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.001 - Time spent PT0.362S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.001.
-Number of solutions checked: 5708200. Found better neighbor 28341 times. Found better solution 5 times.
-Best solution is: 0.0001, 0.3737 = -2.5869
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.001 - Time spent PT1.757S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.01.
-Number of solutions checked: 600. Found better neighbor 50 times. Found better solution 2 times.
-Best solution is: -0.0006, -1.3537 = -4.9855
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.01 - Time spent PT0S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.01.
-Number of solutions checked: 149000. Found better neighbor 1390 times. Found better solution 3 times.
-Best solution is: -0.0020, -0.9377 = -2.5848
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.01 - Time spent PT0.048S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.01.
-Number of solutions checked: 594000. Found better neighbor 2770 times. Found better solution 6 times.
-Best solution is: 0.0005, -0.0527 = -0.2215
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.01 - Time spent PT0.185S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.1.
-Number of solutions checked: 210. Found better neighbor 11 times. Found better solution 4 times.
-Best solution is: 1.9413, 0.0209 = -4.9031
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.1 - Time spent PT0.001S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.1.
-Number of solutions checked: 26200. Found better neighbor 162 times. Found better solution 3 times.
-Best solution is: 0.0492, -0.4283 = -2.8748
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.1 - Time spent PT0.009S
-
-Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.1.
-Number of solutions checked: 108800. Found better neighbor 344 times. Found better solution 7 times.
-Best solution is: -0.0185, -0.0702 = -0.3401
-Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.1 - Time spent PT0.034S
-
 Started operation NeighborFactoryGridImpl - P1, Iter=10, StepSize=0.01.
-Number of solutions checked: 12232. Found better neighbor 1519 times. Found better solution 4 times.
-Best solution is: 0.0008, -0.0008 = 1.0000
-Finished operation NeighborFactoryGridImpl - P1, Iter=10, StepSize=0.01 - Time spent PT0.005S
+Number of solutions checked: 9360. Found better neighbor 1160 times. Found better solution 3 times.
+Best solution is: 0.0000, -0.0001 = 1.0000
+Finished operation NeighborFactoryGridImpl - P1, Iter=10, StepSize=0.01 - Time spent PT0.022S
+
+Started operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.01, Neighbors=10.
+Number of solutions checked: 15140. Found better neighbor 1504 times. Found better solution 4 times.
+Best solution is: -0.0001, 0.0010 = 1.0000
+Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.01, Neighbors=10 - Time spent PT0.01S
 
 Started operation NeighborFactoryGridImpl - P1, Iter=100, StepSize=0.01.
-Number of solutions checked: 107496. Found better neighbor 13337 times. Found better solution 3 times.
-Best solution is: 0.0000, 0.0002 = 1.0000
-Finished operation NeighborFactoryGridImpl - P1, Iter=100, StepSize=0.01 - Time spent PT0.018S
+Number of solutions checked: 111416. Found better neighbor 13827 times. Found better solution 6 times.
+Best solution is: -0.0001, 0.0002 = 1.0000
+Finished operation NeighborFactoryGridImpl - P1, Iter=100, StepSize=0.01 - Time spent PT0.025S
+
+Started operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.01, Neighbors=100.
+Number of solutions checked: 1525500. Found better neighbor 15155 times. Found better solution 3 times.
+Best solution is: -0.0000, -0.0000 = 1.0000
+Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.01, Neighbors=100 - Time spent PT0.372S
 
 Started operation NeighborFactoryGridImpl - P1, Iter=10, StepSize=0.1.
-Number of solutions checked: 1144. Found better neighbor 133 times. Found better solution 3 times.
-Best solution is: 0.0061, -0.0063 = 0.9999
-Finished operation NeighborFactoryGridImpl - P1, Iter=10, StepSize=0.1 - Time spent PT0.001S
+Number of solutions checked: 1112. Found better neighbor 129 times. Found better solution 3 times.
+Best solution is: 0.0038, 0.0010 = 1.0000
+Finished operation NeighborFactoryGridImpl - P1, Iter=10, StepSize=0.1 - Time spent PT0.006S
+
+Started operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.1, Neighbors=10.
+Number of solutions checked: 1920. Found better neighbor 182 times. Found better solution 5 times.
+Best solution is: -0.0029, -0.0159 = 0.9997
+Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=10, StepSize=0.1, Neighbors=10 - Time spent PT0.001S
 
 Started operation NeighborFactoryGridImpl - P1, Iter=100, StepSize=0.1.
-Number of solutions checked: 12352. Found better neighbor 1444 times. Found better solution 7 times.
-Best solution is: 0.0050, 0.0040 = 1.0000
+Number of solutions checked: 11568. Found better neighbor 1346 times. Found better solution 6 times.
+Best solution is: -0.0007, 0.0015 = 1.0000
 Finished operation NeighborFactoryGridImpl - P1, Iter=100, StepSize=0.1 - Time spent PT0.005S
 
+Started operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.1, Neighbors=100.
+Number of solutions checked: 168500. Found better neighbor 1585 times. Found better solution 5 times.
+Best solution is: -0.0006, -0.0003 = 1.0000
+Finished operation NeighborFactoryCircumferenceImpl - P1, Iter=100, StepSize=0.1, Neighbors=100 - Time spent PT0.041S
+
 Started operation NeighborFactoryGridImpl - P2, Iter=10, StepSize=0.01.
-Number of solutions checked: 8984. Found better neighbor 1113 times. Found better solution 3 times.
-Best solution is: 0.0129, 0.0109 = 1.0064
-Finished operation NeighborFactoryGridImpl - P2, Iter=10, StepSize=0.01 - Time spent PT0.004S
+Number of solutions checked: 11272. Found better neighbor 1399 times. Found better solution 2 times.
+Best solution is: 1.6929, 1.6929 = 2.0030
+Finished operation NeighborFactoryGridImpl - P2, Iter=10, StepSize=0.01 - Time spent PT0.013S
+
+Started operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.01, Neighbors=10.
+Number of solutions checked: 13120. Found better neighbor 1302 times. Found better solution 2 times.
+Best solution is: 1.6971, 1.6960 = 2.0031
+Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.01, Neighbors=10 - Time spent PT0.006S
 
 Started operation NeighborFactoryGridImpl - P2, Iter=100, StepSize=0.01.
-Number of solutions checked: 98496. Found better neighbor 12212 times. Found better solution 8 times.
-Best solution is: 1.6972, 1.6959 = 2.0031
-Finished operation NeighborFactoryGridImpl - P2, Iter=100, StepSize=0.01 - Time spent PT0.029S
+Number of solutions checked: 98848. Found better neighbor 12256 times. Found better solution 6 times.
+Best solution is: 1.6963, 1.6973 = 2.0031
+Finished operation NeighborFactoryGridImpl - P2, Iter=100, StepSize=0.01 - Time spent PT0.025S
+
+Started operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.01, Neighbors=100.
+Number of solutions checked: 1302500. Found better neighbor 12925 times. Found better solution 5 times.
+Best solution is: 1.6971, 1.6968 = 2.0031
+Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.01, Neighbors=100 - Time spent PT0.406S
 
 Started operation NeighborFactoryGridImpl - P2, Iter=10, StepSize=0.1.
-Number of solutions checked: 1040. Found better neighbor 120 times. Found better solution 2 times.
-Best solution is: 1.6623, 1.7028 = 2.0006
-Finished operation NeighborFactoryGridImpl - P2, Iter=10, StepSize=0.1 - Time spent PT0.001S
+Number of solutions checked: 832. Found better neighbor 94 times. Found better solution 4 times.
+Best solution is: 1.7122, 1.7059 = 2.0025
+Finished operation NeighborFactoryGridImpl - P2, Iter=10, StepSize=0.1 - Time spent PT0S
+
+Started operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.1, Neighbors=10.
+Number of solutions checked: 1690. Found better neighbor 159 times. Found better solution 3 times.
+Best solution is: 1.7025, 1.6814 = 2.0026
+Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=10, StepSize=0.1, Neighbors=10 - Time spent PT0S
 
 Started operation NeighborFactoryGridImpl - P2, Iter=100, StepSize=0.1.
-Number of solutions checked: 10080. Found better neighbor 1160 times. Found better solution 2 times.
-Best solution is: 1.7002, 1.7025 = 2.0030
+Number of solutions checked: 11080. Found better neighbor 1285 times. Found better solution 4 times.
+Best solution is: 1.6919, 1.6896 = 2.0029
 Finished operation NeighborFactoryGridImpl - P2, Iter=100, StepSize=0.1 - Time spent PT0.002S
 
+Started operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.1, Neighbors=100.
+Number of solutions checked: 150300. Found better neighbor 1403 times. Found better solution 7 times.
+Best solution is: 1.6962, 1.6971 = 2.0031
+Finished operation NeighborFactoryCircumferenceImpl - P2, Iter=100, StepSize=0.1, Neighbors=100 - Time spent PT0.046S
+
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.001.
-Number of solutions checked: 31864. Found better neighbor 3973 times. Found better solution 2 times.
-Best solution is: -0.9684, -0.9680 = -3.5745
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.001 - Time spent PT0.013S
+Number of solutions checked: 28400. Found better neighbor 3540 times. Found better solution 1 times.
+Best solution is: -0.0003, -0.0001 = -0.0008
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.001 - Time spent PT0.018S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.001, Neighbors=10.
+Number of solutions checked: 43960. Found better neighbor 4386 times. Found better solution 4 times.
+Best solution is: 0.9682, 0.9687 = -3.5745
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.001, Neighbors=10 - Time spent PT0.021S
 
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.001.
-Number of solutions checked: 288872. Found better neighbor 36009 times. Found better solution 6 times.
-Best solution is: 0.0001, 0.0002 = -0.0005
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.001 - Time spent PT0.089S
+Number of solutions checked: 268024. Found better neighbor 33403 times. Found better solution 9 times.
+Best solution is: 0.0004, 0.0001 = -0.0011
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.001 - Time spent PT0.078S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.001, Neighbors=100.
+Number of solutions checked: 3991600. Found better neighbor 39816 times. Found better solution 3 times.
+Best solution is: -0.0001, 0.0000 = -0.0003
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.001, Neighbors=100 - Time spent PT1.919S
 
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.001.
-Number of solutions checked: 576144. Found better neighbor 71818 times. Found better solution 6 times.
-Best solution is: 0.0001, -0.0003 = -0.0009
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.001 - Time spent PT0.152S
+Number of solutions checked: 597472. Found better neighbor 74484 times. Found better solution 2 times.
+Best solution is: -0.0001, 0.0001 = -0.0004
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.001 - Time spent PT0.202S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.001, Neighbors=200.
+Number of solutions checked: 16559400. Found better neighbor 82597 times. Found better solution 4 times.
+Best solution is: -0.0000, -0.0000 = -0.0001
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.001, Neighbors=200 - Time spent PT7.896S
 
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.01.
-Number of solutions checked: 2488. Found better neighbor 301 times. Found better solution 2 times.
-Best solution is: -1.9673, -0.9787 = -5.3824
+Number of solutions checked: 2904. Found better neighbor 353 times. Found better solution 2 times.
+Best solution is: -0.0007, -0.9554 = -2.5802
 Finished operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.01 - Time spent PT0.001S
 
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.01, Neighbors=10.
+Number of solutions checked: 3380. Found better neighbor 328 times. Found better solution 0 times.
+Best solution is: -0.2636, -0.4550 = -3.5591
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.01, Neighbors=10 - Time spent PT0.002S
+
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.01.
-Number of solutions checked: 27408. Found better neighbor 3326 times. Found better solution 5 times.
-Best solution is: 0.0016, -0.0010 = -0.0055
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.01 - Time spent PT0.008S
+Number of solutions checked: 30656. Found better neighbor 3732 times. Found better solution 5 times.
+Best solution is: -0.0021, 0.0012 = -0.0071
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.01 - Time spent PT0.011S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.01, Neighbors=100.
+Number of solutions checked: 421700. Found better neighbor 4117 times. Found better solution 2 times.
+Best solution is: -0.0020, -0.0005 = -0.0060
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.01, Neighbors=100 - Time spent PT0.209S
 
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.01.
-Number of solutions checked: 58832. Found better neighbor 7154 times. Found better solution 5 times.
-Best solution is: 0.0004, 0.0025 = -0.0074
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.01 - Time spent PT0.015S
+Number of solutions checked: 58360. Found better neighbor 7095 times. Found better solution 9 times.
+Best solution is: 0.0006, -0.0027 = -0.0080
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.01 - Time spent PT0.018S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.01, Neighbors=200.
+Number of solutions checked: 1659200. Found better neighbor 8096 times. Found better solution 4 times.
+Best solution is: -0.0002, -0.0000 = -0.0006
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.01, Neighbors=200 - Time spent PT0.823S
 
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.1.
-Number of solutions checked: 344. Found better neighbor 33 times. Found better solution 5 times.
-Best solution is: -0.9914, -0.0163 = -2.6258
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.1 - Time spent PT0.001S
+Number of solutions checked: 384. Found better neighbor 38 times. Found better solution 0 times.
+Best solution is: 0.6237, 0.1199 = -3.4281
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=10, StepSize=0.1 - Time spent PT0S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.1, Neighbors=10.
+Number of solutions checked: 550. Found better neighbor 45 times. Found better solution 1 times.
+Best solution is: -0.0167, -0.9374 = -2.5925
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=10, StepSize=0.1, Neighbors=10 - Time spent PT0S
 
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.1.
-Number of solutions checked: 3512. Found better neighbor 339 times. Found better solution 4 times.
-Best solution is: -0.0427, -0.0123 = -0.1775
+Number of solutions checked: 3784. Found better neighbor 373 times. Found better solution 6 times.
+Best solution is: 0.9557, 0.0064 = -2.5814
 Finished operation NeighborFactoryGridImpl - RevAckley, Iter=100, StepSize=0.1 - Time spent PT0.002S
 
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.1, Neighbors=100.
+Number of solutions checked: 53600. Found better neighbor 436 times. Found better solution 5 times.
+Best solution is: -0.0019, 0.0060 = -0.0187
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=100, StepSize=0.1, Neighbors=100 - Time spent PT0.026S
+
 Started operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.1.
-Number of solutions checked: 7256. Found better neighbor 707 times. Found better solution 3 times.
-Best solution is: 0.0123, -0.0081 = -0.0475
-Finished operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.1 - Time spent PT0.002S
+Number of solutions checked: 7304. Found better neighbor 713 times. Found better solution 7 times.
+Best solution is: -0.0236, -0.0391 = -0.1839
+Finished operation NeighborFactoryGridImpl - RevAckley, Iter=200, StepSize=0.1 - Time spent PT0.003S
+
+Started operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.1, Neighbors=200.
+Number of solutions checked: 204600. Found better neighbor 823 times. Found better solution 5 times.
+Best solution is: 0.0178, 0.0011 = -0.0588
+Finished operation NeighborFactoryCircumferenceImpl - RevAckley, Iter=200, StepSize=0.1, Neighbors=200 - Time spent PT0.1S
 
 Started operation P1 exhaustive test.
 Minimum checks for exhaustive search: 320000.
 Number of solutions checked: 321602.
 Best solution is: 0.00, 0.00 = 1.00
-Finished operation P1 exhaustive test - Time spent PT0.038S
+Finished operation P1 exhaustive test - Time spent PT0.048S
 Started operation P2 exhaustive test.
 Minimum checks for exhaustive search: 320000.
 Number of solutions checked: 321602.
 Best solution is: 1.70, 1.70 = 2.00
-Finished operation P2 exhaustive test - Time spent PT0.063S
+Finished operation P2 exhaustive test - Time spent PT0.078S
 Started operation RevAckley exhaustive test.
 Minimum checks for exhaustive search: 2000000.
 Number of solutions checked: 2004002.
-Best solution is: -5.00, -5.00 = 0.00
-Finished operation RevAckley exhaustive test - Time spent PT0.497S
+Best solution is: -0.00, -0.00 = -0.00
+Finished operation RevAckley exhaustive test - Time spent PT0.565S
