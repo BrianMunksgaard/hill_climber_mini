@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.javatuples.Pair;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -13,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.event.Level;
 
 @RunWith(JUnit4.class)
-public class ImprovedHillClimberTests {
+public class ImprovedHillClimberSimulatedAnnealingTests {
 	
 	@Test
 	public void testSolutionForP1() {
@@ -51,7 +50,6 @@ public class ImprovedHillClimberTests {
 	}
 
 	@Test
-	@Ignore
 	public void _testSolutionForRevAckleyUsingNeighborFactoryGridImpl() {
 		String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
         String loggerName = this.getClass().getName() + methodName;
@@ -96,23 +94,28 @@ public class ImprovedHillClimberTests {
 	}
 		
 	private Pair<Double, ArrayList<Double>> findSolutionUsingNeighborFactoryCircumferenceImpl(Problem p, int iterations, double stepSize, int neighbors) {
-		Problem problem = new ProblemWrapper(p);
+		ProblemWrapper problemWrapper = new ProblemWrapper(p);
+		double temperature = 100000.0;
+		double coolingRate = 0.004;
+		
 		NeighborFactory neighborFactory = new NeighborFactoryCircumferenceImpl(neighbors);
-		NeighborSelector neighborSelector = new NeighborSelectorPickBestFromLocalHillImpl(problem, neighborFactory);
+		NeighborSelector neighborSelector = new NeighborSelectorPickBestFromSimulatedAnnealingImpl(problemWrapper, neighborFactory, temperature, coolingRate);
 		
 		String opName = 
 				neighborFactory.getClass().getSimpleName() + " - "
 				+ p.getClass().getSimpleName() + ", "
 				+ "Iter=" + Integer.toString(iterations) + ", " 
 				+ "StepSize=" + Double.toString(stepSize) + ", "
-				+ "Neighbors=" + Integer.toString(neighbors); 
+				+ "Neighbors=" + Integer.toString(neighbors) + ", "
+				+ "Temp= " + Double.toString(temperature) + ", "
+				+ "Cooling rate=" + Double.toString(coolingRate); 
 				
 		String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
         String loggerName = this.getClass().getName() + methodName;
         Logger log = LoggerFactory.getLogger(loggerName);
     
 		TimerUtil tu = TimerUtil.start(log, Level.INFO, opName);
-		ImprovedHillClimbing solver = new ImprovedHillClimbing(problem, neighborSelector);
+		ImprovedHillClimbing solver = new ImprovedHillClimbing(problemWrapper, neighborSelector);
 		ArrayList<Double> result = solver.findOptima(iterations, stepSize);
 		tu.stop();
 		Double best = p.eval(result);
@@ -121,22 +124,27 @@ public class ImprovedHillClimberTests {
 	}
 	
 	private void findSolutionUsingNeighborFactoryGridImpl(Problem p, int iterations, double stepSize) {
-		Problem problem = new ProblemWrapper(p);
-		NeighborFactory neighborFactory = new NeighborFactoryGridImpl();
-		NeighborSelector neighborSelector = new NeighborSelectorPickBestFromLocalHillImpl(problem, neighborFactory);
+		ProblemWrapper problemWrapper = new ProblemWrapper(p);
+		double temperature = 100000.0;
+		double coolingRate = 0.004;
+		
+		NeighborFactory neighborFactory =  new NeighborFactoryGridImpl();
+		NeighborSelector neighborSelector = new NeighborSelectorPickBestFromSimulatedAnnealingImpl(problemWrapper, neighborFactory, temperature, coolingRate);
 		
 		String opName = 
 				neighborFactory.getClass().getSimpleName() + " - "
 				+ p.getClass().getSimpleName() + ", "
 				+ "Iter=" + Integer.toString(iterations) + ", " 
-				+ "StepSize=" + Double.toString(stepSize); 
+				+ "StepSize=" + Double.toString(stepSize) + ", "
+				+ "Temp= " + Double.toString(temperature) + ", "
+				+ "Cooling rate=" + Double.toString(coolingRate); 
 				
 		String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
         String loggerName = this.getClass().getName() + methodName;
         Logger log = LoggerFactory.getLogger(loggerName);
     
 		TimerUtil tu = TimerUtil.start(log, Level.INFO, opName);
-		ImprovedHillClimbing solver = new ImprovedHillClimbing(problem, neighborSelector);
+		ImprovedHillClimbing solver = new ImprovedHillClimbing(problemWrapper, neighborSelector);
 		solver.findOptima(iterations, stepSize);
 		tu.stop();
 		log.info("");

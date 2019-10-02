@@ -3,8 +3,6 @@ package dk.eaaa.bm.hillclimber;
 import java.util.ArrayList;
 
 public class ProblemUtil {
-
-//	private static org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ProblemUtil.class);
 	
 	/**
 	 * Generates a random starting point for the specified problem.

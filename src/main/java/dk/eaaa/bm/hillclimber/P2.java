@@ -2,7 +2,7 @@ package dk.eaaa.bm.hillclimber;
 
 import java.util.ArrayList;
 
-public class P2 extends Problem {
+public class P2 extends AbstractProblem {
 
 	public P2() {
 		super();
